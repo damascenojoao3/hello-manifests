@@ -24,11 +24,11 @@ Dentro da raiz (no Github mesmo ou na pasta no terminal com Git), crie uma pasta
 Após ter essa estrutura pronta, é hora de adicionar os arquivos:  
 em  ```.github/workflows```, adicione o arquivo [ci.yaml](evidencias/ci.txt) (IMPORTANTE: mude a extensão do arquivo de ```.txt``` para ```.yaml```). Após ter adicionado, volte à pasta app e adicione o [arquivo main.py](evidencias/main.txt) (mude o tipo do arquivo de ```.txt``` para ```.py```) e o [arquivo dos requerimentos](evidencias/requerimentos.txt) (mude o nome do arquivo para ```requirements.txt```) e adicione o arquivo [Dockerfile](evidencias/docker_file.txt) na raiz do repositório (mude o nome apenas para ```Dockerfile```, sem nenhuma extensão).  
 A estrutura final tem que ficar assim:  
-├── hello-app/
-├── .github/
-│   └── workflows/
+├── hello-app/  
+├── .github/  
+│   └── workflows/  
 │       └── ci.yaml  
-├── app/
+├── app/  
 │   ├── main.py  
 │   └── requirements.txt  
 └── Dockerfile  
@@ -133,4 +133,5 @@ Inclusive, a imagem sempre é atualizada no Docker Hub:
 ![img17](evidencias/dockerhubimage.png)  
 
 É isso. Agora, você já sabe simular o CI/CD!
+
 
