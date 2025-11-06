@@ -96,9 +96,9 @@ Escolha um nome para a sua aplicação, selecione ```default``` como nome do pro
 ![img4](evidencias/passo2.png)  
 Desça até ```Source``` e cole o link do seu repositório com os manifestos e em ```Path``` digite ```.```, ele vai ler a raiz do seu repositório  
 ![img5](evidencias/passo3.png)  
-Desça mais um pouco até ```DESTINATION```, clique em ```Cluster URL``` e selecione a única opção (```https://kubernetes.default.svc```) e, em ````Namespace```, digite ```default```
+Desça mais um pouco até ```DESTINATION```, clique em ```Cluster URL``` e selecione a única opção (```https://kubernetes.default.svc```) e, em ```Namespace```, digite ```default```
 ![img6](evidencias/passo4.png)  
-Agora, no canto superior esquerdo, clique em ```CREATE````e sua aplicação estará pronta!  
+Agora, no canto superior esquerdo, clique em ```CREATE```e sua aplicação estará pronta!  
 ![img7](evidencias/passo5.png)  
 Vai aparecer uma nova aplicação na sua tela principal e, depois de um tempo, se tudo tiver dado certo, sua tela vai aparecer assim:  
 ![img8](evidencias/sucesso.png)  
@@ -131,4 +131,5 @@ E pronto, você agora sabe como atualizar sua imagem! inclusive, pode voltar a f
 ![img16](evidencias/app2.png)  
 Inclusive, a imagem sempre é atualizada no Docker Hub:  
 ![img17](evidencias/dockerhubimage.png)  
+
 É isso. Agora, você já sabe simular o CI/CD!
