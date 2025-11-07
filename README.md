@@ -95,7 +95,7 @@ Copie o resultado e volte ao ArgoCD e insira tal resultado na senha (sim, esse r
 4. Agora que está no ArgoCD, siga:  
 Clique em ```+ NEW APP```
 ![img3](evidencias/passo1.png)  
-Escolha um nome para a sua aplicação, selecione ```default``` como nome do projeto ```Automatic``` em ```SYNC POLICY```  
+Escolha um nome para a sua aplicação, selecione ```default``` como nome do projeto e ```Automatic``` em ```SYNC POLICY```  
 ![img4](evidencias/passo2.png)  
 Desça até ```Source``` e cole o link do seu repositório com os manifestos e em ```Path``` digite ```.```, ele vai ler a raiz do seu repositório  
 ![img5](evidencias/passo3.png)  
@@ -112,7 +112,7 @@ Volte no navegador e digite ```http://localhost:8080```
 Você deve ver algo parecido com isso:  
 ![img9](evidencias/app.png)  
 Para o próximo teste, você pode testar suas Actions:  
-Dê ```ctrl+c``` para parar o app;  
+Dê ```ctrl+c``` no terminal para parar o app;  
 Vá para o repositório do seu app e vá até o ```main.py``` e faça qualquer mudança (mudei a mensagem no exemplo)  
 ![img10](evidencias/changes.png)  
 e dê commit.  
@@ -136,10 +136,3 @@ Inclusive, a imagem sempre é atualizada no Docker Hub:
 ![img17](evidencias/dockerhubimage.png)  
 
 É isso. Agora, você já sabe simular o CI/CD!
-
-
-
-
-
-
-
