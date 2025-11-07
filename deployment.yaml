@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: joaodamasceno3/hello-app:41f7962edad4f006f10002341cc33ef366ee39e2
+        image: joaodamasceno3/hello-app:0c759aad5782189a86ec1b32ef3bc1774fe150be
         ports:
         - containerPort: 8000
