@@ -53,7 +53,7 @@ Assim, é obtido o valor necessário.
 e copiar 100% do conteúdo dele para o segredo (ele é usado como uma senha para o Github Actions autenticar e provar que é uma ação sua).
 No meu caso, os arquivos das chaves não apareceram no explorador de arquivos mas apareceram somente no VS Code (usando o terminal).  
 Ele é usado para gerar um arquivo além do gitops_key, o ```gitops_key.pub```, que é a chave pública.
-```Lembre-se de **NÃO** subir as chaves no repositório```
+Lembre-se de **NÃO** subir as chaves no repositório  
 **MANIFEST_REPO**: é o URL SSH do repositório dos manifestos, o alvo da operação de GitOps. O link SSH é:  
 ```git@github.com:seu-user/repositorio-dos-manifestos.git```  
 **GIT_EMAIL**: é seu e-mail do Github, basta adicioná-lo ao segredo.  
@@ -135,6 +135,7 @@ Inclusive, a imagem sempre é atualizada no Docker Hub:
 ![img17](evidencias/dockerhubimage.png)  
 
 É isso. Agora, você já sabe simular o CI/CD!
+
 
 
 
