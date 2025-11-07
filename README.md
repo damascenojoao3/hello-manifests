@@ -62,6 +62,7 @@ Com isso, você tem tudo do repositório do app pronto!
 Com a 1° etapa pronta, podemos dar início à segunda, e nela, é ainda mais simples: basta adicionar os arquivos de [deployment](deployment.yaml) e [service](service.yaml).  
 O arquivo de deployment serve para controlar o estado dos Pods que serão criados. Se você atualizar o main.py, ele executa o rollout (substituição dos pods).  
 O arquivo de service é o "endereço" do aplicativo. Ele roteia o tráfego que chega para a porta 80 (do service) para a porta 8000 (do container), e faz isso de forma consistente, mesmo que os pods por trás dele morram e sejam recriados.  
+Quando tudo já estiver funcionando, você vai perceber que, no arquivo de deployment, vai ter uma "baixa" nas linhas (e uma "novidade"), essa é a linha atualizada.  
 Juntos, garantem que sua aplicação esteja acessível e rodando! Agora, o repositório que será usado pelo ArgoCD está pronto!  
 # Etapa 3 - ArgoCD
 Para dar início ao processo do ArgoCD, é necessário baixar o Kind. Ele é necessário para fazer o cluster local. Para baixá-lo, vá no navegador e cole esse link na pesquisa:  
@@ -135,6 +136,7 @@ Inclusive, a imagem sempre é atualizada no Docker Hub:
 ![img17](evidencias/dockerhubimage.png)  
 
 É isso. Agora, você já sabe simular o CI/CD!
+
 
 
 
