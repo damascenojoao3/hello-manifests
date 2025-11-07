@@ -1,4 +1,4 @@
-# Projeto CI/CD com Github Actions
+# Projeto CI/CD com Github Actions (manifestos)
 Projeto feito no Windows para simular o CI/CD de uma empresa com Github Actions e Argo CD, com o Github como fonte de verdades.  
 Argo CD é a ferramenta declarativa de entrega contínua (CD) e de GitOps para o Kubernetes.
 # O que foi usado
@@ -10,54 +10,12 @@ Para este projeto, estes foram os "itens" usados:
 - Git  
 - Python 3  
 - Kubernetes
+- [O repositório da aplicação](https://github.com/damascenojoao3/hello-app)
 Uma recomendação é usar o VS Code com o terminal ativado pra fazer push mais facilmente pro Github, facilita todo o processo.  
 Primeiramente, comece com a criação de dois repositórios no Github, um para o arquivo main.py (e mais alguns que serão explicados) e um (esse mesmo) para os manifestos.  
 Com isso, podemos iniciar por etapas:  
 # Etapa 1 - App
-- 1° Passo  
-Dentro da raiz (no Github mesmo ou na pasta no terminal com Git), crie uma pasta chamada ```app```, uma pasta chamada ```.github``` (também na raiz) e, dentro da pasta .github, crie uma pasta chamada ```workflows```. A estrutura deve ficar assim de início:  
-├── hello-app/  
-├── .github/  
-│   └── workflows/  
-└── app/  
-- 2° Passo  
-Após ter essa estrutura pronta, é hora de adicionar os arquivos:  
-em  ```.github/workflows```, adicione o arquivo [ci.yaml](evidencias/ci.txt) (IMPORTANTE: mude a extensão do arquivo de ```.txt``` para ```.yaml```). Após ter adicionado, volte à pasta app e adicione o [arquivo main.py](evidencias/main.txt) (mude o tipo do arquivo de ```.txt``` para ```.py```) e o [arquivo dos requerimentos](evidencias/requerimentos.txt) (mude o nome do arquivo para ```requirements.txt```) e adicione o arquivo [Dockerfile](evidencias/docker_file.txt) na raiz do repositório (mude o nome apenas para ```Dockerfile```, sem nenhuma extensão).  
-A estrutura final tem que ficar assim:  
-├── hello-app/  
-├── .github/  
-│   └── workflows/  
-│       └── ci.yaml  
-├── app/  
-│   ├── main.py  
-│   └── requirements.txt  
-└── Dockerfile  
-Com tudo isso pronto, podemos partir pro próximo passo.  
-- 3° Passo  
-Ainda no repositório do app (no Github mesmo, não mais no terminal), clique em ```Settings```, vá até ```Secrets and variables``` e clique em ```Actions```. Em Actions, é necessária a criação de cinco segredos: ```DOCKER_USERNAME```, ```DOCKER_PASSWORD```, ```SSH_PRIVATE_KEY```, ```MANIFEST_REPO``` e ```GIT_EMAIL```. Eles são usados pelo [ci.yaml](evidencias/ci.txt).  
-Os valores guardados em cada segredo têm que ser inseridos manualmente, e para obter os valores:  
-**DOCKER_USERNAME**: guarda seu nome (Docker ID) do Docker Hub. É usado para autenticar o Github Actions ao fazer build e push da imagem para o Docker Hub.  
-**DOCKER_PASSWORD**: guarda seu Token de Acesso Pessoal (PAT). É a credencial usada com permissão ```Write``` para publicar a imagem no Docker Hub. Para obter uma:  
-1. Fazer o login;  
-2. Vá no seu ícone e clique em Account Settings;  
-3. Navegue até Personal Access Token e clique lá;  
-4. Clique em Generate new token;  
-5. Dê uma descrição ao token (exemplo: github-actions-app-token);  
-6. Mude a permissão para Read & Write;  
-7. Clique em Generate;  
-8. IMEDIATAMENTE, após o gerar o token, copie o valor completo do token gerado;  
-9. Adicione o valor no segredo ```DOCKER_PASSWORD``` (e nunca o compartilhe)  
-Assim, é obtido o valor necessário.  
-**SSH_PRIVATE_KEY**: é o conteúdo do arquivo ```gitops_key```. Para obté-lo, basta usar este comando:  
-```ssh-keygen -t rsa -b 4096 -f gitops_key -C "gitops"```  
-e copiar 100% do conteúdo dele para o segredo (ele é usado como uma senha para o Github Actions autenticar e provar que é uma ação sua).
-No meu caso, os arquivos das chaves não apareceram no explorador de arquivos mas apareceram somente no VS Code (usando o terminal).  
-Ele é usado para gerar um arquivo além do gitops_key, o ```gitops_key.pub```, que é a chave pública.
-Lembre-se de **NÃO** subir as chaves no repositório.  
-**MANIFEST_REPO**: é o URL SSH do repositório dos manifestos, o alvo da operação de GitOps. O link SSH é:  
-```git@github.com:seu-user/repositorio-dos-manifestos.git```  
-**GIT_EMAIL**: é seu e-mail do Github, basta adicioná-lo ao segredo.  
-Com isso, você tem tudo do repositório do app pronto!  
+A etapa 1 é, basicamente, a primeira parte de um todo, e pode ser vista [no repositório da aplicação](https://github.com/damascenojoao3/hello-app).  
 # Etapa 2 - Manifestos
 Com a 1° etapa pronta, podemos dar início à segunda, e nela, é ainda mais simples: basta adicionar os arquivos de [deployment](deployment.yaml) e [service](service.yaml).  
 O arquivo de deployment serve para controlar o estado dos Pods que serão criados. Se você atualizar o main.py, ele executa o rollout (substituição dos pods).  
