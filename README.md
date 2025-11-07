@@ -10,7 +10,7 @@ Para este projeto, estes foram os "itens" usados:
 - Git  
 - Python 3  
 - Kubernetes
-- [O repositório da aplicação](https://github.com/damascenojoao3/hello-app)
+- [O repositório da aplicação](https://github.com/damascenojoao3/hello-app)  
 Uma recomendação é usar o VS Code com o terminal ativado pra fazer push mais facilmente pro Github, facilita todo o processo.  
 Primeiramente, comece com a criação de dois repositórios no Github, um para o arquivo main.py (e mais alguns que serão explicados) e um (esse mesmo) para os manifestos.  
 Com isso, podemos iniciar por etapas:  
@@ -94,3 +94,4 @@ Inclusive, a imagem sempre é atualizada no Docker Hub:
 ![img17](evidencias/dockerhubimage.png)  
 
 É isso. Agora, você já sabe simular o CI/CD!
+
